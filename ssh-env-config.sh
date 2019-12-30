@@ -104,4 +104,12 @@ decode_base64() {
   echo -e "Host *\n  LogLevel DEBUG3" >> ~/.ssh/config && \
   unset SSH_DEBUG
 
+# SSH AUTHORIZED KEYS TEST
+
+[[ ! -z "$SSH_AUTHORIZED_KEYS" ]] && \
+  cp "$SSH_AUTHORIZED_KEYS" ~/.ssh/authorized_keys && \
+  chmod 600 ~/.ssh/authorized_keys && \
+  unset SSH_AUTHORIZED_KEYS
+
+
 [[ $1 ]] && exec "$@"
