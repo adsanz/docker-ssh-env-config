@@ -15,6 +15,9 @@ Things to keep in mind:
 * Any existing files in `~/.ssh` will be overwritten with these new values
 * After writing the values to disk the environment variables are unset to help prevent accidental printing
 
+
+-- FORK JUST 4 FUN --
+
 ## Usage
 
 After adding it to the Dockerfile:
@@ -23,7 +26,7 @@ After adding it to the Dockerfile:
 #...
 
 # You should use a commit hash rather than "master" in your own version of the below
-RUN curl -fL "https://raw.githubusercontent.com/buildkite/docker-ssh-env-config/master/ssh-env-config.sh" -o /usr/local/bin/ssh-env-config.sh \
+RUN curl -fL "https://raw.githubusercontent.com/adsanz/docker-ssh-env-config/master/ssh-env-config.sh" -o /usr/local/bin/ssh-env-config.sh \
     && chmod +x /usr/local/bin/ssh-env-config.sh \
 
 ENTRYPOINT ["ssh-env-config.sh","some-command"]
