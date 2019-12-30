@@ -112,4 +112,4 @@ decode_base64() {
   unset SSH_AUTHORIZED_KEYS
 
 
-tail -f /dev/null
+[[ $1 ]] && exec "$@"
